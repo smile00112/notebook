@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\dateFormatWeb;
+use App\Http\Middleware\dateFormatAdmin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,10 +17,43 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+//поддомены
+// Route::middleware(dateFormatWeb::class)
+//     ->group(array('domain' => '{account}.'.config('app.name')), function() {
 
-Route::get('/', 'metrikaApi@widgets');
-Route::get('/home', 'metrikaApi@widgets');
-Route::get('customers', 'CustomersController@index');
-Route::get('orders', 'OrderController@index');
+//         Route::get('/', 'HomeController@indexCity');
 
-Route::get('metrica', 'metrikaApi@show');
+//         Route::get('mesters/{id}', function($account, $id) {
+//             // ...
+//         //return Redirect::to('https://www.myapp.com'.'/'.$account);
+//     });
+    
+//     Route::get('/test/', function($account) {
+//         return $account.'___1111';
+//     });
+
+//     Route::get('/test2/', function($account) {
+//         return $account.'___2222';
+//     });
+// });
+
+
+Route::middleware(dateFormatWeb::class)->group(function () {
+        Route::get('/test/', function() {
+            return '___1111';
+        });
+        
+        Route::get('/test2/', function() {
+            return '___2222';
+        });
+        
+        Route::get('/', 'HomeController@index');
+    });
+
+
+
+// Route::get('/home', 'metrikaApi@widgets');
+// Route::get('customers', 'CustomersController@index');
+// Route::get('orders', 'OrderController@index');
+
+// Route::get('metrica', 'metrikaApi@show');
