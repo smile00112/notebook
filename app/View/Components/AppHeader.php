@@ -11,18 +11,18 @@ class AppHeader extends Component
      *
      * @return void
      */
-    public $main_phone = 6666666;
+    public $main_phone = '666 666 666';
     public $main_menu = [];
     
     public function __construct()
     {
-        $this->main_phone = '88002225566';
-        $this->main_phone = [
+        $this->main_phone = '8 800 222-55-66';
+        $this->main_menu= [
             'Главная' => ['url' => '/', 'children' => []],
             'Город' => ['url' => '#', 'children' => [ 'Брянск' => ['url' => 'bruansk.'.config('app.name')], 'Тверь' => ['url' => 'bruansk.'.config('app.name')] ]],
             'Ремонт телефонов' => ['url' => '/phone-repare', 'children' => ['Apple' => ['url' => '/phone-repare/apple'], 'Huawey' => ['url' => '/phone-repare/hyawey'], ]],
            'Ремонт компьютеров' => ['url' => '/comp-repare', 'children' => ['Ноутбук' => ['url' => '/comp-repare/noutbook'], 'Планшет' => ['url' => '/comp-repare/tablet'], ]],            
-        ]
+        ];
     }
 
     /**

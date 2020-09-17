@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         $user1 = new User();
         $user1->name = 'admin';
         $user1->email = 'gorely.aleksei@yandex.ru';
-        $user1->password = bcrypt('secret');
+        $user1->password = bcrypt('73281704');
         $user1->save();
         $user1->roles()->attach($admin);
         $user1->permissions()->attach($createTasks);
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
         $user2 = new User();
         $user2->name = 'Manager';
         $user2->email = 'manager@manager.com';
-        $user2->password = bcrypt('secret');
+        $user2->password = bcrypt('managerPassword009');
         $user2->save();
         $user2->roles()->attach($manager);
         $user2->permissions()->attach($createUsers);

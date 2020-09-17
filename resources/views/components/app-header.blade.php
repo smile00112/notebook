@@ -40,7 +40,7 @@
     </div>
     <div id="slidemenu" data-hover="dropdown" data-animations="fadeIn">
         <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html" class="shadow-effect">{{ $slot }}</a></li>
+        <li class="active"><a href="index.html" class="shadow-effect"></a></li>
             <li><a href="laptop-reparatur-berlin-spandau.html" class="shadow-effect">Über uns</a></li>
             <li class="dropdown"><a href="service.html" data-toggle="dropdown" data-submenu=""
                     class="shadow-effect">Service<span class="ecaret"></span></a>

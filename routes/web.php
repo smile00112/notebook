@@ -48,12 +48,20 @@ Route::middleware(dateFormatWeb::class)->group(function () {
         });
         
         Route::get('/', 'HomeController@index');
-    });
+});
 
+Route::group(['prefix' => 'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function () {
 
+    Route::get( '/', 'DashboardController@index' )->name('admin.index');
+    Route::resource( '/category', 'CategoryController', ['as'=>'admin'] );
+    
+});
 
 // Route::get('/home', 'metrikaApi@widgets');
 // Route::get('customers', 'CustomersController@index');
 // Route::get('orders', 'OrderController@index');
 
 // Route::get('metrica', 'metrikaApi@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
