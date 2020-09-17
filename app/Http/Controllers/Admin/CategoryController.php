@@ -32,7 +32,7 @@ class CategoryController extends Controller
         return view('admin.categoryes.create', [
             'category' => [],
             'categoryes' => BlogCategory::with('children')->where('parent_id', '0')->get(),
-            'delimetr' => '',
+            'delimiter' => '->',
         ]);
     }
 

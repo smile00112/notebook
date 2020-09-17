@@ -9,7 +9,7 @@ class BlogCategory extends Model
 {
     protected $table = 'blog_category';
     // Mass assigned
-    protected $fillable = ['title', 'slug', 'description', 'content', 'parent_id', 'published', 'created_by', 'modified_by'];
+    protected $fillable = ['title', 'h1', 'menu_title', 'slug', 'description', 'content', 'parent_id', 'published', 'main_menu'];
     // Mutators
     public function setSlugAttribute($value) {
       $this->attributes['slug'] = Str::slug( mb_substr($this->title, 0, 40) . "-" . \Carbon\Carbon::now()->format('dmyHi'), '-');

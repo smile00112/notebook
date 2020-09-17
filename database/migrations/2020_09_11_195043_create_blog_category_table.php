@@ -16,13 +16,14 @@ class CreateBlogCategoryTable extends Migration
         Schema::create('blog_category', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('menu_title');      
+            $table->string('h1');                     
             $table->text('description')->nullable();
             $table->text('content')->nullable();
             $table->string('slug')->unique();
             $table->integer('parent_id')->nullable();
-            $table->tinyInteger('published')->nullable();
-            $table->integer('creater_by')->nullable();
-            $table->integer('modified_by')->nullable();
+            $table->tinyInteger('published')->default(1);
+            $table->tinyInteger('main_menu')->nullable(1);            
             $table->timestamps();
         });
     }
